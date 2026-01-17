@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. Sanjai Kumar - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bento-item {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bento-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .bento-item:hover::before {
+            opacity: 1;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .gradient-bg-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .gradient-bg-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .gradient-bg-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-5xl z-50 glass rounded-full px-6 py-4">
+        <div class="flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-white">S. Sanjai Kumar</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-white/90 hover:text-white transition">About</a>
+                <a href="#education" class="nav-link text-white/90 hover:text-white transition">Education</a>
+                <a href="#experience" class="nav-link text-white/90 hover:text-white transition">Experience</a>
+                <a href="#skills" class="nav-link text-white/90 hover:text-white transition">Skills</a>
+                <a href="#achievements" class="nav-link text-white/90 hover:text-white transition">Achievements</a>
+                <a href="#contact" class="nav-link text-white/90 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-40 pb-32 px-4 min-h-screen flex items-center justify-center">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating mb-8 inline-block">
+                <div class="w-32 h-32 mx-auto rounded-full glass p-1">
+                    <div class="w-full h-full rounded-full image-placeholder">
+                        <i class="fas fa-user text-5xl text-white/60"></i>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold text-white mb-6 drop-shadow-lg">S. Sanjai Kumar</h1>
+            <p class="text-2xl md:text-3xl text-white/90 mb-12 font-light">B.Sc Mathematics Graduate | Creative Professional</p>
+            <div class="flex justify-center space-x-6 mb-12 flex-wrap gap-4">
+                <a href="tel:+919994451940" class="glass-card px-6 py-3 rounded-full text-white hover:scale-110 transition">
+                    <i class="fas fa-phone mr-2"></i>+91-9994451940
+                </a>
+                <a href="mailto:shinchansanjai@gmail.com" class="glass-card px-6 py-3 rounded-full text-white hover:scale-110 transition">
+                    <i class="fas fa-envelope mr-2"></i>shinchansanjai@gmail.com
+                </a>
+            </div>
+            <div class="flex justify-center space-x-4 flex-wrap gap-4">
+                <a href="#contact" class="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:scale-110 hover:shadow-2xl transition glow-effect">Get in Touch</a>
+                <a href="#about" class="px-8 py-4 glass-card text-white rounded-full font-semibold hover:scale-110 transition">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Bento Grid -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bento-item glass-card p-8 md:col-span-2">
+                    <h3 class="text-3xl font-bold text-white mb-6">Personal Details</h3>
+                    <div class="space-y-4 text-white/90">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-purple-300"></i>
+                            <p><span class="font-semibold text-white">Location:</span> Dharmapuri</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-birthday-cake text-purple-300"></i>
+                            <p><span class="font-semibold text-white">Date of Birth:</span> March 30, 2006</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-user text-purple-300"></i>
+                            <p><span class="font-semibold text-white">Gender:</span> Male</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-item glass-card p-8">
+                    <h3 class="text-3xl font-bold text-white mb-6">Languages</h3>
+                    <div class="space-y-4">
+                        <div class="glass-dark p-4 rounded-xl">
+                            <p class="font-semibold text-white mb-1">Tamil</p>
+                            <p class="text-white/70 text-sm">Speaking & Writing</p>
+                        </div>
+                        <div class="glass-dark p-4 rounded-xl">
+                            <p class="font-semibold text-white mb-1">English</p>
+                            <p class="text-white/70 text-sm">Speaking & Writing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section with Bento Grid -->
+    <section id="education" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">Education</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 gradient-bg-1 rounded-full blur-3xl opacity-30"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">B.Sc Mathematics</h3>
+                                <p class="text-white/80">Government Arts College, Dharmapuri</p>
+                            </div>
+                            <div class="glass-dark px-4 py-2 rounded-full">
+                                <span class="text-2xl font-bold text-white">87%</span>
+                            </div>
+                        </div>
+                        <div class="image-placeholder rounded-xl h-32 mt-6">
+                            <i class="fas fa-graduation-cap text-4xl text-white/40"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 gradient-bg-2 rounded-full blur-3xl opacity-30"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold text-white mb-6">Schooling</h3>
+                        <div class="space-y-4">
+                            <div class="glass-dark p-4 rounded-xl">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-white">Class XII</span>
+                                    <span class="text-white/70">2023</span>
+                                </div>
+                                <div class="text-sm text-white/70 space-y-1">
+                                    <p>Tamil Nadu Board | Tamil Medium</p>
+                                    <p class="text-white font-semibold">Score: 70%</p>
+                                </div>
+                            </div>
+                            <div class="glass-dark p-4 rounded-xl">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-semibold text-white">Class X</span>
+                                    <span class="text-white/70">2021</span>
+                                </div>
+                                <div class="text-sm text-white/70 space-y-1">
+                                    <p>Tamil Nadu Board | Tamil Medium</p>
+                                    <p class="text-white font-semibold">Score: 80%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Internships Section with Bento Grid -->
+    <section id="experience" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">Experience & Internships</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bento-item glass-card p-8 md:col-span-2 relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-40 h-40 gradient-bg-3 rounded-full blur-3xl opacity-20"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <h3 class="text-3xl font-bold text-white mb-2">TCDS</h3>
+                            <span class="glass-dark px-4 py-2 rounded-full text-white/90">May 2025 - June 2025</span>
+                        </div>
+                        <p class="text-white/80 leading-relaxed text-lg">During my internship, I gained hands-on experience in Tally Prime by managing daily accounting operations, including accurate voucher entry, bank reconciliation, and inventory tracking. I assisted with GST compliance by recording tax-specific transactions and preparing data for regulatory filings. Additionally, I generated and analyzed key financial reports like Balance Sheets and Profit & Loss statements to support the finance team's decision-making.</p>
+                    </div>
+                </div>
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 gradient-bg-4 rounded-full blur-2xl opacity-30"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-2xl font-bold text-white mb-2">Paavai Engineering College</h3>
+                            <span class="text-white/70 text-sm">February 2025</span>
+                        </div>
+                        <p class="text-white/80">Business Skill development</p>
+                        <div class="image-placeholder rounded-xl h-24 mt-4">
+                            <i class="fas fa-briefcase text-2xl text-white/40"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-24 h-24 gradient-bg-5 rounded-full blur-2xl opacity-30"></div>
+                    <div class="relative z-10">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-2xl font-bold text-white mb-2">Microsoft</h3>
+                            <span class="text-white/70 text-sm">May 2023 - July 2023</span>
+                        </div>
+                        <p class="text-white/80">Development of Skill and experience in Microsoft software's</p>
+                        <p class="text-white/80 mt-2">Editorial department of Photoshop and Lightroom</p>
+                        <div class="image-placeholder rounded-xl h-24 mt-4">
+                            <i class="fab fa-microsoft text-2xl text-white/40"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Bento Grid -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-1 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-calculator text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">Mathematics</p>
+                </div>
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-2 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-keyboard text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">English Typing</p>
+                </div>
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-3 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-paint-brush text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">Photoshop</p>
+                </div>
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-4 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-film text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">After Effects</p>
+                </div>
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-5 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-cut text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">Editing</p>
+                </div>
+                <div class="bento-item glass-card p-6 text-center aspect-square flex flex-col items-center justify-center group cursor-pointer">
+                    <div class="gradient-bg-6 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-camera text-2xl text-white"></i>
+                    </div>
+                    <p class="font-semibold text-white">Photography</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section with Bento Grid -->
+    <section id="achievements" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">Achievements</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 gradient-bg-5 rounded-full blur-3xl opacity-30"></div>
+                    <div class="relative z-10 flex items-start space-x-4">
+                        <div class="gradient-bg-5 p-4 rounded-2xl">
+                            <i class="fas fa-trophy text-3xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">1st Prize for Maths Events</h3>
+                            <p class="text-white/80">Won first prize in Mathematics events during B.Sc program</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-item glass-card p-8 relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-32 h-32 gradient-bg-6 rounded-full blur-3xl opacity-30"></div>
+                    <div class="relative z-10 flex items-start space-x-4">
+                        <div class="gradient-bg-6 p-4 rounded-2xl">
+                            <i class="fas fa-medal text-3xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Department Topper</h3>
+                            <p class="text-white/80">Achieved department topper position during school</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-white mb-16 text-center drop-shadow-lg">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bento-item glass-card p-8 text-center group cursor-pointer">
+                        <div class="gradient-bg-1 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-phone text-2xl text-white"></i>
+                        </div>
+                        <p class="text-sm text-white/70 mb-2">Phone</p>
+                        <a href="tel:+919994451940" class="text-lg font-semibold text-white hover:text-purple-200 transition">+91-9994451940</a>
+                    </div>
+                    <div class="bento-item glass-card p-8 text-center group cursor-pointer">
+                        <div class="gradient-bg-2 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-envelope text-2xl text-white"></i>
+                        </div>
+                        <p class="text-sm text-white/70 mb-2">Email</p>
+                        <a href="mailto:shinchansanjai@gmail.com" class="text-lg font-semibold text-white hover:text-purple-200 transition break-all">shinchansanjai@gmail.com</a>
+                    </div>
+                    <div class="bento-item glass-card p-8 text-center group cursor-pointer">
+                        <div class="gradient-bg-3 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                        </div>
+                        <p class="text-sm text-white/70 mb-2">Location</p>
+                        <p class="text-lg font-semibold text-white">Dharmapuri, Tamil Nadu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="glass-card rounded-2xl p-6 inline-block">
+                <p class="text-white/80">&copy; 2025 S. Sanjai Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+</html>
